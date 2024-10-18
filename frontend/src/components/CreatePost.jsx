@@ -11,7 +11,7 @@ const CreatePost = () => {
         e.preventDefault();
         try {
             const token = localStorage.getItem('token'); 
-            await axios.post('http://localhost:5000/api/posts', { title, content }, {
+            await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/posts`, { title, content }, {
                 headers: { Authorization: `Bearer ${token}` }
             });
             alert('Post created successfully!');

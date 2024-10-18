@@ -10,7 +10,7 @@ const Posts = () => {
 
     const fetchPosts = async () => {
         try {
-            const res = await axios.get('http://localhost:5000/api/posts');
+            const res = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/posts`);
             setPosts(res.data);
         } catch (error) {
             console.error('Error fetching posts:', error);
@@ -20,7 +20,7 @@ const Posts = () => {
     const handleDeletePost = async (id) => {
         try {
             const token = localStorage.getItem('token');
-            await axios.delete(`http://localhost:5000/api/posts/${id}`, {
+            await axios.delete(`${import.meta.env.VITE_BACKEND_URL}/api/posts/${id}`, {
                 headers: { Authorization: `Bearer ${token}` }
             });
             alert('Post deleted successfully!');
@@ -41,7 +41,7 @@ const Posts = () => {
         try {
             const token = localStorage.getItem('token');
             const response = await axios.put(
-                `http://localhost:5000/api/posts/${editPost.id}`, 
+                `${import.meta.env.VITE_BACKEND_URL}/api/posts/${editPost.id}`, 
                 { title: editPost.title, content: editPost.content }, 
                 { headers: { Authorization: `Bearer ${token}` } }
             );
