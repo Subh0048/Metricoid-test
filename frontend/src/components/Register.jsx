@@ -25,10 +25,10 @@ const Register = () => {
         <div className="container">
             <h2>Register</h2>
             <form onSubmit={handleRegister}>
-                <input type="text" placeholder="Username" onChange={(e) => setUsername(e.target.value)} required />
-                <input type="password" placeholder="Password" onChange={(e) => setPassword(e.target.value)} required />
-                <input type="email" placeholder="Email" onChange={(e) => setEmail(e.target.value)} required />
-                <input type="text" placeholder="Mobile Number" onChange={(e) => setMobile(e.target.value)} required />
+                <input type="text" placeholder="Username" onChange={(e) => setUsername(e.target.value)} value={username} required />
+                <input type="password" placeholder="Password" onChange={(e) => setPassword(e.target.value)} value={password} required />
+                <input type="email" placeholder="Email" onChange={(e) => setEmail(e.target.value)} value={email} required />
+                <input type="text" placeholder="Mobile Number" onChange={(e) => setMobile(e.target.value)} value={mobile} required />
                 <button type="submit">Register</button>
             </form>
         </div>
