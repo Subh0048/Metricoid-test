@@ -4,10 +4,15 @@ const cors = require('cors');
 const dotenv = require('dotenv');
 const authRoutes = require('./routes/auth.js');
 const postRoutes = require('./routes/posts');
+const http = require("http");
+const app = express();
+
+const server = http.createServer(app);
+
 
 dotenv.config();
 
-const app = express();
+
 const PORT = process.env.PORT ;
 
 // Middleware
@@ -38,6 +43,8 @@ mongoose.connect(process.env.MONGODB_URI, {
 
 
 // Start the server
-app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
-});
+
+
+server.listen(PORT, () =>
+    console.log(`Listening on port ${PORT}`)
+  );
