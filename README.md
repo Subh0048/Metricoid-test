@@ -38,8 +38,8 @@ Make sure you have the following installed:
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/yourusername/your-repo-name.git
-   cd your-repo-name
+   git clone https://github.com/Subh0048/Metricoid-test.git
+   
 2. **Install dependencies for the backend**:
    ```bash
    cd backend
